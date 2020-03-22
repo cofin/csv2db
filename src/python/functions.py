@@ -74,7 +74,7 @@ def open_file(file):
     file-object
         A file object
     """
-    print(f"File appears to be encoded as {get_char_encoding(file)}")
+    #print(f"File appears to be encoded as {get_char_encoding(file)}")
     if file.endswith(".zip"):
         zip_file = zipfile.ZipFile(file, mode="r")
         file = zip_file.open(zip_file.infolist()[0], mode="r")
@@ -304,5 +304,4 @@ def get_csv_reader(file):
     file : file-object
         A file object
     """
-    print(locale.getpreferredencoding())
     return csv.reader(file, delimiter=cfg.column_separator, quotechar=cfg.quote_char)
